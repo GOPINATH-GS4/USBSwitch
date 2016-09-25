@@ -66,14 +66,7 @@ void loop() {
   readJoyStick();
 
   if(joyStickPressed && mouseEnabled) {
-    /***
-    Serial.print("SX:");
-    Serial.println(sx);
-    Serial.print("SY:");
-    Serial.println(sy);
-    Serial.print("SK:");
-    Serial.println(sk);
-    ***/
+   
     int x = getReading(sx);
     int y = -getReading(sy);
     
