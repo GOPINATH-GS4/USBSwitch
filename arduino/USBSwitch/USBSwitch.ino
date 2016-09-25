@@ -88,6 +88,7 @@ void loop() {
     
     if ((x = digitalRead(i)) == LOW) {  
       writeKeyBoard(mappings[i-2]);
+      delay(50);
     }
   } 
   delay(responseDelay);
