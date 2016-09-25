@@ -93,18 +93,8 @@ void loop() {
   int x  = LOW;
   for (int i = START_PIN; i <= END_PIN; i++) {
     
-    if ((x = digitalRead(i)) == LOW) {
-      
-      Serial.print("PIN ");
-      Serial.print(i);
-      Serial.print("  ");
-      Serial.print(x);
-      Serial.println(" is LOW ");
-      Serial.print("Writing ");
-      Serial.println(mappings[i-2]);
-      
+    if ((x = digitalRead(i)) == LOW) {  
       writeKeyBoard(mappings[i-2]);
-      
     }
   } 
   delay(responseDelay);
@@ -145,11 +135,6 @@ void parseAndUnderstandCommand() {
       int idx = data.indexOf(':');
       int pin = data.substring(0, idx).toInt();
       String value = data.substring(idx+1).c_str();
-      Serial.println(data.substring(idx+1));
-      Serial.print("Pin:");
-      Serial.println(pin);
-      Serial.print("Map:");
-      Serial.println(value);
       if (pin >= START_PIN && pin <= END_PIN) {
         strcpy(mappings[pin-2], value.c_str());
       }
@@ -191,7 +176,6 @@ void readCommand() {
             //Serial.println((char) inChar);
             inData += (char) inChar;
         }
-        
         Serial.print("Command Received: ");
         Serial.println(inData);
         commandRecd = true;
