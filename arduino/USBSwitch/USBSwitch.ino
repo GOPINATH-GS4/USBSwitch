@@ -20,7 +20,7 @@ bool mouseEnabled = false;
 // Mouse Initializtions 
 int px = 0, py = 0, pk = 0;
 int range = 12;               // output range of X or Y movement
-int responseDelay = 2;       // response delay of the mouse, in ms
+int responseDelay = 10;       // response delay of the mouse, in ms
 int threshold = range/4;      // resting threshold
 int center = range/2;         // resting position value
 int mouseReading[2];          // final mouse readings for {x, y}
