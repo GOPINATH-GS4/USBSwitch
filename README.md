@@ -14,6 +14,9 @@ Switch 8 - "8"
 
 ````
 
+## Circuit Diagram 	
+![image](./images/USBSwitch_bb.png)
+
 ## Connections 
 ###### The sketch intializes the Keyboard, Mouse and Serial interface, 
 
@@ -42,8 +45,6 @@ P:2:Hello World (Switch 1 is mapped to "Hello world", when switch 1 is pressed t
 
 ##### The serial port is used to accept commands from the host computer through 
 
-#### Circuit Diagram 	
-![image](./images/USBSwitch_bb.png)
 
 
 #### Video Demo 
