@@ -7,6 +7,8 @@ char mappings[10][50] = {
 };
 // JOYSTICK Initializations 
 
+boolean switchStates[10] = {false, false, false, false, false, false, false, false, false, false};
+
 #define S_K A2 
 #define S_Y A1 
 #define S_X A0 
@@ -14,8 +16,6 @@ int sx = 0, sy = 0, sk = 0;
 bool joyStickPressed = false;
 bool mousePressed = false;
 bool mouseEnabled = false;
-
-
 
 // Mouse Initializtions 
 int px = 0, py = 0, pk = 0;
@@ -85,10 +85,12 @@ void loop() {
   }
   int x  = LOW;
   for (int i = START_PIN; i <= END_PIN; i++) {
-    
-    if ((x = digitalRead(i)) == LOW) {  
+    if ((x = digitalRead(i)) == LOW && !switchStates[i]) {  
       writeKeyBoard(mappings[i-2]);
+      switchStates[i] = true;
       delay(50);
+    } else if (x == HIGH && switchStates[i]) {
+      switchStates[i] = false;
     }
   } 
   delay(responseDelay);
@@ -135,7 +137,7 @@ void parseAndUnderstandCommand() {
     }
   }
 }
-  
+
 void writeKeyBoard(char *value) {
 
   for(int i = 0; i < strlen(value); i++) 
