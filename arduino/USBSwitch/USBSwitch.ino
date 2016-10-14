@@ -86,7 +86,15 @@ void loop() {
   int x  = LOW;
   for (int i = START_PIN; i <= END_PIN; i++) {
     if ((x = digitalRead(i)) == LOW && !switchStates[i]) {  
-      writeKeyBoard(mappings[i-2]);
+      if (strncmp(mappings[i-2], "~ML~", 4) == 0) {
+        Mouse.click();
+      } else if (strncmp(mappings[i-2], "~MLL~", 5) == 0) {
+        Mouse.click();
+        delay(50);
+        Mouse.click();
+      } else {
+        writeKeyBoard(mappings[i-2]);
+      }
       switchStates[i] = true;
       delay(50);
     } else if (x == HIGH && switchStates[i]) {
