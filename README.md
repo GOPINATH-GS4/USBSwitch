@@ -1,6 +1,6 @@
 # USBSwitch
 
-###### USB switch is a device which lets you connect multiple momentary switches (8) to a computer through USB interface, and map each switch to a character or set of characters which are sent to the computer as keyboard strokes, these switches are mapped by default to digits "1" to "8", they can be remapped through a configuration program through the computer and assign a character or a set of charaters to each switch dynamically. 
+###### USB switch is a device which lets you connect multiple momentary switches (8 now and up to 12) to a computer through USB interface, and map each switch to a character or set of characters which are sent to the computer as keyboard strokes, these switches are mapped by default to digits "1" to "8", they can be remapped through a configuration program through the computer and assign a character or a set of charaters to each switch dynamically. 
 
 ````
 Switch 1 - "1"
